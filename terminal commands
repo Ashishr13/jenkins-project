@@ -1,0 +1,24 @@
+    1  sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/redhat-stable/jenkins.repo    #to install jenkins
+    2  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+    3  yum upgrade
+    4  sudo dnf install java-17-amazon-corretto -y
+    5  yum install jenkins -y
+    6  sudo systemctl enable jenkins
+    7  systemctl start jenkins
+    8  systemctl status jenkins
+    9  cat /var/lib/jenkins/secrets/initialAdminPassword
+   10  clear
+   11  git clone https://github.com/Ashishr13/jenkins-project.git            #to git clone manually, w/o config git
+   12  sudo yum install git -y
+   13  git --v
+   14  git -version
+   15  git --version
+   16  git clone https://github.com/Ashishr13/jenkins-project.git
+   17  ls
+   18  cd jenkins-project/
+   19  ls
+   20  cat README.md
+   21  cat index.html24  
+       curl http://13.235.51.5:8080/job/demo-git/build?token=mytoken     #authorization error
+   25  curl http://13.235.51.5:8080/buildByToken/build?job=demo-git/&token=mytoken      #authorization error because \ not given in between job and token but will execute from different browser url 
+   26  curl http://13.235.51.5:8080/buildByToken/build?job=demo-git\&token=mytoken
