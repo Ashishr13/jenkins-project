@@ -67,4 +67,26 @@ Variables:
             }
         }
     }
+    post {                                    // post is use to execute the specified task
+        always {                                                      
+            echo 'I will always say hello'
+            sh 'date'
+            sh 'echo "${admin_user}"'
+            echo 'This will run always even if any stage fails'  
+        }
+        success {                                                     
+            echo 'This will run only if the pipeline succeeds'          
+        }
+        failure {
+            echo 'This will run only if the pipeline fails'
+        }
+        unstable {
+            echo 'This will run only if the pipeline is unstable'
+            // Handle unstable build actions
+        }
+        changed {
+            echo 'This will run only if the build status has changed'
+            // Notify about the change in build status
+        }
+    }
 }
